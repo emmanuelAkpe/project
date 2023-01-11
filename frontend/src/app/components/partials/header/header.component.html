@@ -1,0 +1,109 @@
+<header class="p-5 bg-nilètso-green text-white h-20 w-screen">
+  <div class="flex items-center justify-around">
+    <div class="text-2xl font-semibold flex-1">Niletso</div>
+
+    <div class="hidden md:block flex-1">
+      <div
+        class="flex items-center justify-center border border-white p-2 rounded-md"
+      >
+        <input
+          type="text "
+          placeholder="search for items..."
+          class="w-3/4 border-none outline-none bg-nilètso-green px-3"
+        />
+        <button class="flex items-center justify-center px-3 hover:scale-105">
+          <mat-icon class="text-2xl">search</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <div class="flex-1">
+      <ul class="flex justify-center items-center gap-6 w-full">
+        <li class="flex justify-center items-center">
+          <mat-icon>shopping_cart</mat-icon>
+          <a href="" class="relative"
+            >cart
+
+            <span
+              class="absolute -top-3 -right-5 bg-black rounded-full w-5 h-5 flex items-center justify-center"
+              >5</span
+            ></a
+          >
+        </li>
+        <li class="" (click)="toggleDropDown()">
+          <div>
+            <div class="flex justify-start items-start relative cursor-pointer">
+              <mat-icon>person</mat-icon>Account<mat-icon
+                >keyboard_arrow_down</mat-icon
+              >
+            </div>
+          </div>
+
+          <div
+            *ngIf="dropDown"
+            class="absolute z-50 top-16 md:top-12 w-32 rounded-sm bg-white flex items-start justify-center gap-3"
+          >
+            <ul>
+              <li
+                *ngFor="let item of dropNavItems"
+                class="text-black hover:text-nilètso-green m-3"
+              >
+                <a href="{{ item.link }}">{{ item.name }}</a>
+                <hr class="text-nilètso-green" />
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="block sm:hidden lg:hidden md:hidden">
+      <mat-icon class="text-3xl">menu</mat-icon>
+    </div>
+
+    <div
+      class="md:hidden flex flex-col items-start justify-start text-black bg-white fixed top-0 w-screen h-screen p-5"
+    >
+      <div class="flex items-center justify-between w-full p-5">
+        <div class="text-2xl font-semibold flex-1 text-nilètso-green">
+          Niletso
+        </div>
+        <div
+          class="border w-8 h-8 border-nilètso-green flex items-center justify-center rounded-full"
+        >
+          <mat-icon class="text-2xl text-center">close</mat-icon>
+        </div>
+      </div>
+
+      <div class="">
+        <div
+          class="flex items-center justify-center border border-nilètso-green p-3 rounded-md"
+        >
+          <input
+            type="text "
+            placeholder="search items"
+            class="w-3/4 outline-none text-gray-800 rounded-l-2xl px-3 border-none"
+          />
+          <button class="bg-white flex items-center justify-center px-3">
+            <mat-icon class="text-nilètso-green text-2xl">search</mat-icon>
+          </button>
+        </div>
+      </div>
+      <div class="">
+        <ul>
+          <li *ngFor="let item of smallSCreenItems" class="my-3">
+            <a href="{{ item.link }}">{{ item.name }}</a>
+            <hr class="text-nilètso-green w-screen" />
+          </li>
+        </ul>
+      </div>
+      <div class="border border-nilètso-green w-4/5 p-3 rounded-xl">
+        <ul>
+          <li *ngFor="let item of contactItems" class="my-3">
+            <a href="{{ item.link }}">{{ item.name }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
